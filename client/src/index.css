@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(258, 88%, 66%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+
+  /* Custom RealArtist AI colors */
+  --dark-50: hsl(240, 11%, 95%);
+  --dark-100: hsl(240, 9%, 89%);
+  --dark-200: hsl(240, 6%, 81%);
+  --dark-300: hsl(240, 5%, 65%);
+  --dark-400: hsl(240, 4%, 46%);
+  --dark-500: hsl(240, 4%, 36%);
+  --dark-600: hsl(240, 5%, 26%);
+  --dark-700: hsl(240, 5%, 15%);
+  --dark-800: hsl(240, 4%, 9%);
+  --dark-900: hsl(240, 6%, 6%);
+  --dark-950: hsl(240, 8%, 4%);
+
+  /* Business colors */
+  --success: hsl(142, 76%, 36%);
+  --warning: hsl(38, 92%, 50%);
+  --info: hsl(221, 83%, 53%);
+}
+
+.dark {
+  --background: hsl(240, 8%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 6%, 6%);
+  --muted-foreground: hsl(240, 4%, 46%);
+  --popover: hsl(240, 6%, 6%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 6%, 6%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 5%, 15%);
+  --input: hsl(240, 5%, 15%);
+  --primary: hsl(258, 88%, 66%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(240, 5%, 15%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 5%, 15%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    @apply dark;
+  }
+}
+
+@layer components {
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-colors font-medium;
+  }
+
+  .sidebar-nav-item.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .sidebar-nav-item:not(.active) {
+    @apply text-muted-foreground hover:bg-accent hover:text-foreground;
+  }
+
+  .stats-card {
+    @apply bg-card border border-border rounded-xl p-6 hover:bg-accent/50 transition-colors;
+  }
+
+  .project-item {
+    @apply flex items-center gap-4 p-4 bg-card rounded-lg hover:bg-accent/50 transition-colors cursor-pointer;
+  }
+
+  .progress-step {
+    @apply flex items-center gap-3;
+  }
+
+  .progress-step.completed .step-indicator {
+    @apply bg-success text-white;
+  }
+
+  .progress-step.active .step-indicator {
+    @apply bg-primary text-primary-foreground animate-pulse;
+  }
+
+  .progress-step.pending .step-indicator {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  .step-indicator {
+    @apply w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium;
+  }
+}
+
+@layer utilities {
+  .text-dark-50 { color: hsl(240, 11%, 95%); }
+  .text-dark-100 { color: hsl(240, 9%, 89%); }
+  .text-dark-200 { color: hsl(240, 6%, 81%); }
+  .text-dark-300 { color: hsl(240, 5%, 65%); }
+  .text-dark-400 { color: hsl(240, 4%, 46%); }
+  .text-dark-500 { color: hsl(240, 4%, 36%); }
+  .text-dark-600 { color: hsl(240, 5%, 26%); }
+  .text-dark-700 { color: hsl(240, 5%, 15%); }
+  .text-dark-800 { color: hsl(240, 4%, 9%); }
+  .text-dark-900 { color: hsl(240, 6%, 6%); }
+  .text-dark-950 { color: hsl(240, 8%, 4%); }
+
+  .bg-dark-50 { background-color: hsl(240, 11%, 95%); }
+  .bg-dark-100 { background-color: hsl(240, 9%, 89%); }
+  .bg-dark-200 { background-color: hsl(240, 6%, 81%); }
+  .bg-dark-300 { background-color: hsl(240, 5%, 65%); }
+  .bg-dark-400 { background-color: hsl(240, 4%, 46%); }
+  .bg-dark-500 { background-color: hsl(240, 4%, 36%); }
+  .bg-dark-600 { background-color: hsl(240, 5%, 26%); }
+  .bg-dark-700 { background-color: hsl(240, 5%, 15%); }
+  .bg-dark-800 { background-color: hsl(240, 4%, 9%); }
+  .bg-dark-900 { background-color: hsl(240, 6%, 6%); }
+  .bg-dark-950 { background-color: hsl(240, 8%, 4%); }
+
+  .border-dark-800 { border-color: hsl(240, 4%, 9%); }
+  .border-dark-700 { border-color: hsl(240, 5%, 15%); }
+}
