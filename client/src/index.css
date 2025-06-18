@@ -94,11 +94,11 @@
   }
 
   .stats-card {
-    @apply bg-card border border-border rounded-xl p-6 hover:bg-accent/50 transition-colors;
+    @apply bg-card border border-border rounded-xl p-6 hover:bg-accent transition-colors;
   }
 
   .project-item {
-    @apply flex items-center gap-4 p-4 bg-card rounded-lg hover:bg-accent/50 transition-colors cursor-pointer;
+    @apply flex items-center gap-4 p-4 bg-card rounded-lg hover:bg-accent transition-colors cursor-pointer;
   }
 
   .progress-step {
