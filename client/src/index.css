@@ -149,4 +149,11 @@
 
   .border-dark-800 { border-color: hsl(240, 4%, 9%); }
   .border-dark-700 { border-color: hsl(240, 5%, 15%); }
+
+  .bg-success { background-color: var(--success); }
+  .text-success { color: var(--success); }
+  .bg-warning { background-color: var(--warning); }
+  .text-warning { color: var(--warning); }
+  .bg-info { background-color: var(--info); }
+  .text-info { color: var(--info); }
 }
