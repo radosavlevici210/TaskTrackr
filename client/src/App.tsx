@@ -4,15 +4,16 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useAuth } from "@/hooks/useAuth";
-import NotFound from "@/pages/not-found";
-import Landing from "@/pages/landing";
 import Dashboard from "@/pages/dashboard";
 import CreateSong from "@/pages/create-song";
+import EliteStudio from "@/pages/elite-studio";
+import AIArtists from "@/pages/ai-artists";
 import ProjectVault from "@/pages/project-vault";
 import Analytics from "@/pages/analytics";
 import Royalties from "@/pages/royalties";
-import AiArtists from "@/pages/ai-artists";
 import Security from "@/pages/security";
+import Landing from "@/pages/landing";
+import NotFound from "@/pages/not-found";
 
 function Router() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -25,6 +26,7 @@ function Router() {
         <>
           <Route path="/" component={Dashboard} />
           <Route path="/create" component={CreateSong} />
+          <Route path="/elite-studio" component={EliteStudio} />
           <Route path="/projects" component={ProjectVault} />
           <Route path="/analytics" component={Analytics} />
           <Route path="/royalties" component={Royalties} />
