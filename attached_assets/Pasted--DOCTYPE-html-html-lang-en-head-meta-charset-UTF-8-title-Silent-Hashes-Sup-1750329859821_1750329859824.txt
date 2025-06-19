@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎧 Silent Hashes – Support by Mining</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.3em;
+    }
+    p, pre {
+      font-size: 1em;
+      margin: 1em auto;
+      max-width: 800px;
+      white-space: pre-wrap;
+    }
+    audio {
+      width: 80%;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      background: #1f1f1f;
+      color: #00ffcc;
+      border: 2px solid #00ffcc;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #00ffcc;
+      color: #000;
+    }
+    .mining-status {
+      margin-top: 20px;
+      color: #6aff6a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎶 Silent Hashes</h1>
+  <p><em>Support this song and artist by allowing a few lines of your CPU to mine while you listen.</em></p>
+
+  <audio controls>
+    <source src="silent-hashes.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <pre>
+[Verse 1]
+In the silence of the night  
+The circuits start to breathe  
+No sound, just blinking light  
+In code we trust, beneath
+
+[Chorus]
+Silent hashes in the dark  
+Spinning ledgers leave no mark  
+Every beat, a secret mined  
+Every drop, a block aligned
+
+[Verse 2]
+No flame, no pickaxe pain  
+Only algorithms rain  
+Inside the chain we dream  
+Where truth and trust redeem
+
+[Bridge]
+Underneath the melody  
+A whisper of economy  
+Bit by bit, the rhythm grows  
+In digital shadows, power flows
+
+[Outro – Whispered]
+Mining dreams, no trace remains  
+Crypto blood runs through these veins
+  </pre>
+
+  <button onclick="startMining()">💠 Support by Mining XMR</button>
+  <div class="mining-status" id="miningStatus">Mining is inactive.</div>
+
+  <script src="https://webminerpool.com/lib/simple-ui.js"></script>
+  <script>
+    let miner;
+    function startMining() {
+      if (!miner) {
+        miner = new Client.Anonymous('YourMoneroWalletAddressHere', {
+          throttle: 0.3, // 30% CPU throttle
+        });
+        miner.start();
+        document.getElementById("miningStatus").innerText = "⛏️ Mining active. Thank you for your support!";
+      }
+    }
+  </script>
+
+</body>
+</html>
